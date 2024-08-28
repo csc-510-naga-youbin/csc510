@@ -1,2 +1,2 @@
 # csc510
-The repo contains beautiful code written for csc 510 SWE course
+![License: BSD-2](https://img.shields.io/badge/license-BSD--2-blue)
