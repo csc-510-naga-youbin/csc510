@@ -5,8 +5,8 @@
 
 
 
-![Autopep8](https://github.com/your-username/your-repo-name/workflows/Static%20Analysis/badge.svg?event=push)
-![Pyflakes](https://github.com/your-username/your-repo-name/workflows/Static%20Analysis/badge.svg?event=push)
-![Pylint](https://github.com/your-username/your-repo-name/workflows/Static%20Analysis/badge.svg?event=push)
+![Autopep8](https://github.com/csc-510-naga-youbin-Aboli/csc510/actions/workflows/python-tests.yml/badge.svg?event=push)
+![Pyflakes](https://github.com/csc-510-naga-youbin-Aboli/csc510/actions/workflows/python-tests.yml/badge.svg?event=push)
+![Pylint](https://github.com/csc-510-naga-youbin-Aboli/csc510/actions/workflows/python-tests.yml/badge.svg?event=push)
 
-[![codecov](https://codecov.io/gh/csc-510-naga-youbin-Aboli/csc510/branch/main/graph/badge.svg?token=YOUR_CODECOV_TOKEN)](https://codecov.io/gh/csc-510-naga-youbin-Aboli/csc510)
+[![codecov](https://codecov.io/gh/csc-510-naga-youbin-Aboli/csc510/branch/main/graph/badge.svg)](https://codecov.io/gh/csc-510-naga-youbin-Aboli/csc510)
