@@ -24,7 +24,7 @@ def test_list_with_duplicates():
     arr = [4, 2, 5, 2, 3, 4, 1]
     expected = [1, 2, 2, 3, 4, 4, 5]
     assert merge_sort(arr) == expected
-I quickly wrote test cases.
+
 def test_unsorted_array():
     arr = [5, 3, 1, 4, 2]
     expected = [1, 2, 3, 4, 5]
