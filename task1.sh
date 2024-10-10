@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Find the process ID (PID) of the running infinite.sh script
+# ps aux to monitor running process
+# grep to filter the infinite.sh file which run infinitely in the background
+# grep -v to invert its output
+# awk to manipulate data
 PID=$(ps aux | grep infinite.sh | grep -v grep | awk '{print $2}')
 
 # Check if PID is not empty
