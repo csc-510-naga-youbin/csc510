@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# Extract passengers from 2nd class who embarked at Southampton,
-# replace male/female labels with M/F, and calculate the average age.
+# Step a: Extract 2nd class passengers who embarked at Southampton
+gawk -F, '$3 == 2 && $13 ~/S/ {print $0}' titanic.csv > filtered_passengers.csv
 
-# Debugging: Print the filtered lines
-echo "Filtered lines:"
-# a. Extract passengers from 2nd class who embarked at Southampton.
-gawk -F, '$3 == 2 && $13 ~/S/ {print $0}' titanic.csv
+# Step b: Replace male/female labels with M/F
+sed -i 's/female/F/g; s/male/M/g' filtered_passengers.csv
 
-# Process the filtered lines and print the last line
-csvcut -c Pclass,Embarked,Age,Sex titanic.csv | csvgrep -c Pclass -m 2 | csvgrep -c Embarked -m S | \
-csvformat -T | sed 's/\tmale\t/\tM\t/; s/\tfemale\t/\tF\t/' | \
-awk -F'\t' '{if ($3 != "" && $3 != "NA") {sum += $3; count += 1}} END {if (count > 0) print "Average Age:", sum / count}'
+# Step c: Calculate the average age of the filtered passengers
+average_age=$(gawk -F, 'BEGIN {sum=0; count=0} $7 != "" && $7 != "Age" {sum += $7; count++} END {if (count > 0) print sum / count}' filtered_passengers.csv)
+
+echo "Average age of filtered passengers: $average_age"
