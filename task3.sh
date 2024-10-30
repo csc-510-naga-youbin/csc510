@@ -5,7 +5,8 @@
 
 # Debugging: Print the filtered lines
 echo "Filtered lines:"
-csvcut -c Pclass,Embarked,Age titanic.csv | csvgrep -c Pclass -m 2 | csvgrep -c Embarked -m S | csvlook
+# a. Extract passengers from 2nd class who embarked at Southampton.
+gawk -F, '$3 == 2 && $13 ~/S/ {print $0}' titanic.csv
 
 # Process the filtered lines and print the last line
 csvcut -c Pclass,Embarked,Age,Sex titanic.csv | csvgrep -c Pclass -m 2 | csvgrep -c Embarked -m S | \
